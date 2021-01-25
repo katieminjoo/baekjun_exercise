@@ -1,24 +1,13 @@
 
 # 1000. A B 입력받아 A+B 출력
 
-'''
+```
 a = input().split()
 b =[]
 for i in a:
     b.append(int(i))
 print(sum(b))
-'''
-
-# In[47]:
-
-
-a = input().split()
-A,B = [int(x) for x in a]
-print(A+B)
-
-
-# In[ ]:
-
+```
 
 # 1001. A-B
 
