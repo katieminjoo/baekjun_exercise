@@ -1,18 +1,13 @@
-#!/usr/bin/env python
-# coding: utf-8
 
-# # 1000. A B 입력받아 A+B 출력
+# 1000. A B 입력받아 A+B 출력
 
-# In[51]:
-
-
-# 나의 최종 코드
+'''
 a = input().split()
 b =[]
 for i in a:
     b.append(int(i))
 print(sum(b))
-
+'''
 
 # In[47]:
 
