@@ -4,19 +4,16 @@
 aabbbccb는 b가 떨어져서 나타나기 때문에 그룹 단어가 아니다.
 단어 N개를 입력으로 받아 그룹 단어의 개수를 출력하는 프로그램을 작성하시오.
 """
-def is_group(S):
-    used = []  # 한 번 이상 등장한 문자는 used 리스트에 추가하자
-    old = S[0]  # 순서대로 이전 문자열과 비교
-    ans = True  # 리턴값 초기화
-    for new in S:  # S 를 돌면서 개별 문자 체크
-        if new in used:  # 만약 문자가 등장한 적이 있으면
-            ans = False  # 그룹 단어가 아님
-            break
-        elif new == old:  # 같은 문자의 연속: 그룹 생성 중
-            continue
-        else:  # 같은 문자의 연속이 끝났다면
-            used.append(old)  # 사용된 문자 리스트에 추가하고
-            old = new  # old 문자 갱신
-    return ans
-N = int(input())
-print(sum([is_group(input())for _ in range(N)]))
+n = int(input())
+group = 0
+for i in range(n):
+    word = input()
+    cnt = 0
+    for j in range(len(word)-1):
+        if word[j] != word[j+1]: # 붙어있는 a,b 두 문자가 다르면
+            word_list = word[j+1:] # b부터 끝까지 리스트로 저장
+            if word_list.count(word[j]) > 0: #그 리스트에서 a를 찾아서 한개라도 있으면 > 붙어있지않은 a가 하나 더 있는거니까 그룹단어가 아님
+                cnt += 1
+    if cnt == 0:
+        group += 1
+print(group)
